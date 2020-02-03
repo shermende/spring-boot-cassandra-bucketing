@@ -1,0 +1,18 @@
+version: '2'
+services:
+  cassandra:
+    image: cassandra:3.11
+    hostname: cassandra
+    volumes:
+      - ./cassandra.sh:/cassandra.sh
+    command: "sh /cassandra.sh"
+    networks:
+      vpcbr:
+        ipv4_address: 10.10.0.5
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.0.0/24 # 10.6.0.xxx
+          gateway: 10.10.0.1
