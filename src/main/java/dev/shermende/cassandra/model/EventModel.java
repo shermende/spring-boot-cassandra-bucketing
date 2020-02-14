@@ -64,9 +64,9 @@ public class EventModel extends RepresentationModel<EventModel> implements Seria
         if (!super.equals(o)) return false;
         EventModel that = (EventModel) o;
         return Objects.equals(partition, that.partition) &&
-                Objects.equals(bucket, that.bucket) &&
-                Objects.equals(ts, that.ts) &&
-                Objects.equals(payload, that.payload);
+            Objects.equals(bucket, that.bucket) &&
+            Objects.equals(ts, that.ts) &&
+            Objects.equals(payload, that.payload);
     }
 
     @Override

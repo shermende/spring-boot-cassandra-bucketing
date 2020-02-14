@@ -19,9 +19,9 @@ public class EventController {
     private final ObjectFactory<EventPageAssembler> factory;
 
     public EventController(
-            EventService eventService,
-            EventAssembler assembler,
-            ObjectFactory<EventPageAssembler> factory
+        EventService eventService,
+        EventAssembler assembler,
+        ObjectFactory<EventPageAssembler> factory
     ) {
         this.factory = factory;
         this.assembler = assembler;
@@ -30,8 +30,8 @@ public class EventController {
 
     @GetMapping("/{partition}")
     public PagedModel<EventModel> get(
-            @PathVariable String partition,
-            CassandraPageable pageable
+        @PathVariable String partition,
+        CassandraPageable pageable
     ) {
         return factory.getObject().toModel(eventService.page(partition, pageable), assembler);
     }

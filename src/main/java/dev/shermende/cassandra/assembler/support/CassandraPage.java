@@ -18,18 +18,18 @@ public class CassandraPage<E extends Bucketable<?>, P> {
     }
 
     public static <E extends Bucketable<?>, P> CassandraPage<E, P> of(
-            List<E> list,
-            CassandraPageable pageable,
-            boolean hasPrev,
-            boolean hasNext
+        List<E> list,
+        CassandraPageable pageable,
+        boolean hasPrev,
+        boolean hasNext
     ) {
         return new CassandraPage<>(
-                list,
-                list.get(0).getTs(),
-                list.get(list.size() - 1).getTs(),
-                pageable,
-                hasPrev,
-                hasNext
+            list,
+            list.get(0).getTs(),
+            list.get(list.size() - 1).getTs(),
+            pageable,
+            hasPrev,
+            hasNext
         );
     }
 
@@ -39,12 +39,12 @@ public class CassandraPage<E extends Bucketable<?>, P> {
     }
 
     private CassandraPage(
-            List<E> content,
-            Long first,
-            Long last,
-            CassandraPageable pageable,
-            boolean hasPrev,
-            boolean hasNext
+        List<E> content,
+        Long first,
+        Long last,
+        CassandraPageable pageable,
+        boolean hasPrev,
+        boolean hasNext
     ) {
         this.content = content;
         this.first = first;

@@ -12,20 +12,20 @@ import org.springframework.stereotype.Service;
 public class EventService extends AbstractCassandraBucketService<Event, String, EventKey> {
 
     public EventService(
-            @Qualifier("monthBucket") Bucket bucket,
-            BucketRepository<Event, String, EventKey> bucketRepository
+        @Qualifier("monthBucket") Bucket bucket,
+        BucketRepository<Event, String, EventKey> bucketRepository
     ) {
         super(bucket, bucketRepository);
     }
 
     public Event create(String partition, String payload) {
         return save(
-                new Event()
-                        .setKey(new EventKey()
-                                .setPartition(partition)
-                                .setBucket(getCurrentBucket())
-                                .setTs(getSnowflakeNextId()))
-                        .setPayload(payload)
+            new Event()
+                .setKey(new EventKey()
+                    .setPartition(partition)
+                    .setBucket(getCurrentBucket())
+                    .setTs(getSnowflakeNextId()))
+                .setPayload(payload)
         );
     }
 

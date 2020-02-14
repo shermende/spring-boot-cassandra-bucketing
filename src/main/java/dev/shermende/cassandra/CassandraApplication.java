@@ -10,19 +10,19 @@ import org.springframework.scheduling.annotation.Scheduled;
 @SpringBootApplication
 public class CassandraApplication {
 
+    private final EventService eventService;
+
     public CassandraApplication(EventService eventService) {
         this.eventService = eventService;
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(CassandraApplication.class, args);
-    }
-
-    private final EventService eventService;
-
-//    @Scheduled(fixedDelay = 20000)
+    @Scheduled(fixedDelay = 1000)
     public void run() {
         eventService.create("one", String.valueOf(System.currentTimeMillis()));
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(CassandraApplication.class, args);
     }
 
 }

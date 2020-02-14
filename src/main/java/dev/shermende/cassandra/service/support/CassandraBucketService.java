@@ -17,81 +17,81 @@ public interface CassandraBucketService<E extends Bucketable<P>, P> {
     E save(@Valid E entity);
 
     CassandraPage<E, P> page(
-            P partition,
-            CassandraPageable pageable
+        P partition,
+        CassandraPageable pageable
     );
 
 
     List<E> findPrevPage(
-            P partition,
-            Long bucket,
-            Long snowflake,
-            int size
+        P partition,
+        Long bucket,
+        Long snowflake,
+        int size
     );
 
 
     List<E> findPrev(
-            P partition,
-            Long bucket,
-            int size
+        P partition,
+        Long bucket,
+        int size
     );
 
 
     List<E> findPrev(
-            P partition,
-            Long bucket,
-            Long snowflake,
-            int size
+        P partition,
+        Long bucket,
+        Long snowflake,
+        int size
     );
 
 
     List<E> findNextPage(
-            P partition,
-            Long bucket,
-            Long snowflake,
-            int size
+        P partition,
+        Long bucket,
+        Long snowflake,
+        int size
     );
 
 
     List<E> findNext(
-            P partition,
-            Long bucket,
-            int size
+        P partition,
+        Long bucket,
+        int size
     );
 
 
     List<E> findNext(
-            P partition,
-            Long bucket,
-            Long snowflake,
-            int size
+        P partition,
+        Long bucket,
+        Long snowflake,
+        int size
     );
 
 
     Long findBucket(
-            Long snowflake
+        Long snowflake
     );
 
 
     Long findFirstBucket(
-            P partition
+        P partition
     );
 
 
     Long findLastBucket(
-            P partition
+        P partition
     );
 
 
     Long findPrevBucket(
-            P partition,
-            Long bucket
+        P partition,
+        Long bucket
     );
 
 
     Long findNextBucket(
-            P partition,
-            Long bucket
+        P partition,
+        Long bucket
     );
 
 

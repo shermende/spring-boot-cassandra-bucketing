@@ -52,35 +52,35 @@ class CassandraApplicationTests {
     @BeforeEach
     public void before() {
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(598L).setTs(1574604456540L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(598L).setTs(1574604456540L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(598L).setTs(1574604456541L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(598L).setTs(1574604456541L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(598L).setTs(1574604456542L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(598L).setTs(1574604456542L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(598L).setTs(1574604456543L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(598L).setTs(1574604456543L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(598L).setTs(1574604456544L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(598L).setTs(1574604456544L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(599L).setTs(1577195751093L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(599L).setTs(1577195751093L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(599L).setTs(1577195751094L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(599L).setTs(1577195751094L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(599L).setTs(1577195751095L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(599L).setTs(1577195751095L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(599L).setTs(1577195751096L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(599L).setTs(1577195751096L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(599L).setTs(1577195751097L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(599L).setTs(1577195751097L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(600L).setTs(1579874151094L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(600L).setTs(1579874151094L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(600L).setTs(1579874151095L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(600L).setTs(1579874151095L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(600L).setTs(1579874151096L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(600L).setTs(1579874151096L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(600L).setTs(1579874151097L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(600L).setTs(1579874151097L)).setPayload("/"));
         service.save(new Event()
-                .setKey(new EventKey().setPartition("one").setBucket(600L).setTs(1579874151098L)).setPayload("/"));
+            .setKey(new EventKey().setPartition("one").setBucket(600L).setTs(1579874151098L)).setPayload("/"));
     }
 
     @AfterEach

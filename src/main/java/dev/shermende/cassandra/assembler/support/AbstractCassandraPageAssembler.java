@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  * @param <P> partition
  */
 public abstract class AbstractCassandraPageAssembler<E extends Bucketable<P>, R extends RepresentationModel<R>, P>
-        implements CassandraPageAssembler<E, R, P> {
+    implements CassandraPageAssembler<E, R, P> {
 
     private static final String TRUE = "true";
     private static final String FALSE = "false";
@@ -36,28 +36,28 @@ public abstract class AbstractCassandraPageAssembler<E extends Bucketable<P>, R 
 
     @Override
     public PagedModel<R> toModel(
-            CassandraPage<E, P> page,
-            RepresentationModelAssembler<E, R> assembler
+        CassandraPage<E, P> page,
+        RepresentationModelAssembler<E, R> assembler
     ) {
         return addLinks(
-                page,
-                getModel(page, assembler)
+            page,
+            getModel(page, assembler)
         );
     }
 
     private PagedModel<R> getModel(
-            CassandraPage<E, P> page,
-            RepresentationModelAssembler<E, R> assembler
+        CassandraPage<E, P> page,
+        RepresentationModelAssembler<E, R> assembler
     ) {
         return new PagedModel<>(
-                page.getContent().stream().map(assembler::toModel).collect(Collectors.toList()),
-                null
+            page.getContent().stream().map(assembler::toModel).collect(Collectors.toList()),
+            null
         );
     }
 
     private PagedModel<R> addLinks(
-            CassandraPage<E, P> page,
-            PagedModel<R> resource
+        CassandraPage<E, P> page,
+        PagedModel<R> resource
     ) {
         final String request = ServletUriComponentsBuilder.fromCurrentRequest().build().toString();
 
@@ -75,48 +75,48 @@ public abstract class AbstractCassandraPageAssembler<E extends Bucketable<P>, R 
     }
 
     private Link createFirstLink(
-            String request
+        String request
     ) {
         return new Link(
-                new UriTemplate(request),
-                FIRST
+            new UriTemplate(request),
+            FIRST
         );
     }
 
     private Link createSelfLink(
-            String request
+        String request
     ) {
         return new Link(
-                new UriTemplate(UriComponentsBuilder.fromHttpUrl(request).build().toString()),
-                SELF
+            new UriTemplate(UriComponentsBuilder.fromHttpUrl(request).build().toString()),
+            SELF
         );
     }
 
     private Link createPrevLink(
-            String request,
-            Long first,
-            int size
+        String request,
+        Long first,
+        int size
     ) {
         return new Link(
-                new UriTemplate(UriComponentsBuilder.fromHttpUrl(request)
-                        .replaceQueryParam(OFFSET, first)
-                        .replaceQueryParam(SIZE, size)
-                        .replaceQueryParam(REVERSE, TRUE).build().toString()),
-                PREV
+            new UriTemplate(UriComponentsBuilder.fromHttpUrl(request)
+                .replaceQueryParam(OFFSET, first)
+                .replaceQueryParam(SIZE, size)
+                .replaceQueryParam(REVERSE, TRUE).build().toString()),
+            PREV
         );
     }
 
     private Link createNextLink(
-            String request,
-            Long last,
-            int size
+        String request,
+        Long last,
+        int size
     ) {
         return new Link(
-                new UriTemplate(UriComponentsBuilder.fromHttpUrl(request)
-                        .replaceQueryParam(OFFSET, last)
-                        .replaceQueryParam(SIZE, size)
-                        .replaceQueryParam(REVERSE, FALSE).build().toString()),
-                NEXT
+            new UriTemplate(UriComponentsBuilder.fromHttpUrl(request)
+                .replaceQueryParam(OFFSET, last)
+                .replaceQueryParam(SIZE, size)
+                .replaceQueryParam(REVERSE, FALSE).build().toString()),
+            NEXT
         );
     }
 

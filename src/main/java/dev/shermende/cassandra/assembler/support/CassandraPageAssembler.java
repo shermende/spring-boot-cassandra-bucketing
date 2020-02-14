@@ -11,11 +11,11 @@ import org.springframework.hateoas.server.RepresentationModelAssembler;
  * @param <P> partition
  */
 interface CassandraPageAssembler<E extends Bucketable<P>, R extends RepresentationModel<R>, P>
-        extends RepresentationModelAssembler<CassandraPage<E, P>, PagedModel<R>> {
+    extends RepresentationModelAssembler<CassandraPage<E, P>, PagedModel<R>> {
 
     PagedModel<R> toModel(
-            CassandraPage<E, P> page,
-            RepresentationModelAssembler<E, R> assembler
+        CassandraPage<E, P> page,
+        RepresentationModelAssembler<E, R> assembler
     );
 
 }
