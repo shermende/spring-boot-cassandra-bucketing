@@ -8,9 +8,10 @@
 $ docker-compose up -d --build
 $ ./gradlew bootRun
 ```
-* localhost:9042 - cassandra
-* localhost:8080 - application
+
 ## References
 * [About bucketing](https://blog.discordapp.com/how-discord-stores-billions-of-messages-7fa6ec7ee4c7)
 * [Bucket implementation](https://github.com/daviddominguez/springboot-cassandra-example)
 * [Bucket types](https://www.slideshare.net/MarkusHfer/bucket-your-partitions-wisely-cassandra-summit-2016)
+
+###### Keywords: spring cassandra, cassandra bucketing, time-based bucket
